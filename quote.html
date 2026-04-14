@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Get a Quote | LoneStar Graphics & Print</title>
+<meta name="description" content="Multi-step quote funnel for custom apparel orders in Texas." />
+<link rel="stylesheet" href="styles.css" />
+</head><body>
+<header class="site-header"><div class="container nav-wrap"><a href="index.html" class="logo">LGP <span>| LoneStar Graphics & Print</span></a><div class="phone-links"><a href="tel:+15127301846">Call: (512) 730-1846</a><a href="sms:+15127301846">Text Us</a></div><a class="btn btn-primary" href="#quote-funnel">Get a Quote</a></div></header>
+<main><section id="quote-funnel"><div class="container funnel"><p class="kicker">Quote Funnel</p><h1>Get Your Free Custom Apparel Quote</h1><p>Pick your items, upload your design, and we’ll send you a mockup before you pay.</p><div class="progress-wrap"><div id="progressText">Step 1 of 5 (20%)</div><progress id="progressBar" max="100" value="20"></progress></div>
+<form id="funnelForm" action="thank-you.html">
+<div class="step active" data-step="1">
+  <h2>Step 1 — Choose Your Deal</h2>
+  <div class="inline" style="margin-bottom:.8rem;"><button class="option-btn selected mode-btn" data-mode="bundle" type="button">📦 Bundle Deals (Best Value)</button><button class="option-btn mode-btn" data-mode="individual" type="button">👕 Individual Products</button></div>
+  <div id="bundleMode" class="option-grid">
+    <div class="card"><span class="badge">Most Popular</span><h3>T-Shirts Deal</h3><p>Best for teams needing professional uniforms fast.</p><button type="button" class="btn btn-outline">Select</button></div>
+    <div class="card"><span class="badge">Best Value</span><h3>Hoodies Deal</h3><p>Ideal for branded drops and cooler weather crews.</p><button type="button" class="btn btn-outline">Select</button></div>
+    <div class="card"><h3>Polos Deal</h3><p>Business-use bundle for staff and customer-facing teams.</p><button type="button" class="btn btn-outline">Select</button></div>
+    <div class="card"><h3>Hats Deal</h3><p>Add a sharp final layer to your uniform package.</p><button type="button" class="btn btn-outline">Select</button></div>
+  </div>
+  <div id="individualMode" class="card" style="display:none; margin-top:.8rem;">
+    <div id="productList"></div>
+    <button type="button" class="btn btn-outline" id="addItem">+ Add another item</button>
+    <p class="small-note">Minimum order is 5 pieces — we’ll help you get there.</p>
+  </div>
+  <button type="button" class="btn btn-primary next-btn">Continue</button>
+</div>
+<div class="step" data-step="2">
+  <h2>Step 2 — Contact Info</h2>
+  <div class="field"><label>Full Name</label><input required name="name" type="text" /></div>
+  <div class="field"><label>Email</label><input required name="email" type="email" /></div>
+  <div class="field"><label>Phone</label><input required name="phone" type="tel" /></div>
+  <div class="field"><label><input type="checkbox" name="sms_optin" /> I agree to receive SMS updates about my quote</label></div>
+  <p class="trust">We respond within 24 hours.</p>
+  <button type="button" class="btn btn-outline prev-btn">Back</button>
+  <button type="button" class="btn btn-primary next-btn">Continue</button>
+</div>
+<div class="step" data-step="3">
+  <h2>Step 3 — Colors</h2>
+  <p>Choose one or more colors.</p>
+  <div class="card-grid cols-3">
+    <label class="card"><input type="checkbox" name="colors" value="Black"/> Black</label>
+    <label class="card"><input type="checkbox" name="colors" value="White"/> White</label>
+    <label class="card"><input type="checkbox" name="colors" value="Grey"/> Grey</label>
+    <label class="card"><input type="checkbox" name="colors" value="Navy"/> Navy</label>
+    <label class="card"><input type="checkbox" name="colors" value="Red"/> Red</label>
+    <label class="card"><input type="checkbox" name="colors" value="Safety Green"/> Safety Green</label>
+  </div>
+  <button type="button" class="btn btn-outline prev-btn">Back</button>
+  <button type="button" class="btn btn-primary next-btn">Continue</button>
+</div>
+<div class="step" data-step="4">
+  <h2>Step 4 — Design</h2>
+  <p>Do you have a logo?</p>
+  <div class="inline"><button type="button" class="option-btn logo-btn selected" data-logo="yes">Yes, I have one</button><button type="button" class="option-btn logo-btn" data-logo="no">No, I need one</button></div>
+  <div id="logoYes" class="card" style="margin-top:.8rem;"><div class="field"><label>Upload logo</label><input type="file" /><p class="small-note">Drag & drop or browse.</p></div><div class="field"><label>Placement notes (optional)</label><textarea placeholder="Add any placement details or instructions"></textarea></div></div>
+  <div id="logoNo" class="card" style="margin-top:.8rem; display:none;"><div class="field"><label>Company Name</label><input type="text" /></div><div class="field"><label>Design description (optional)</label><textarea></textarea></div></div>
+  <p><strong>We’ll send you a free mockup before you pay.</strong></p>
+  <button type="button" class="btn btn-outline prev-btn">Back</button>
+  <button type="button" class="btn btn-primary next-btn">Continue</button>
+</div>
+<div class="step" data-step="5">
+  <h2>Step 5 — Sizes</h2>
+  <label class="field"><input id="noSizes" type="checkbox" /> I don’t have sizes yet</label>
+  <div id="sizesWrap" class="card-grid cols-3">
+    <div class="field"><label>S</label><input type="number" min="0" /></div>
+    <div class="field"><label>M</label><input type="number" min="0" /></div>
+    <div class="field"><label>L</label><input type="number" min="0" /></div>
+    <div class="field"><label>XL</label><input type="number" min="0" /></div>
+    <div class="field"><label>2XL (+$3)</label><input type="number" min="0" /></div>
+    <div class="field"><label>3XL (+$3)</label><input type="number" min="0" /></div>
+  </div>
+  <p class="small-note">Fast turnaround: 2–4 days after approval • Built for businesses, events, and brands.</p>
+  <button type="button" class="btn btn-outline prev-btn">Back</button>
+  <button type="submit" class="btn btn-primary">Submit Quote Request</button>
+</div>
+</form></div></section>
+<section><div class="container funnel"><div class="card"><h3>Backend Setup Notes</h3><ul><li>Send every submission to email and SMS notifications.</li><li>Trigger an immediate text alert to the sales number.</li><li>Store all quote leads in a CRM or tracking sheet.</li></ul></div></div></section></main>
+<script src="script.js"></script>
+</body></html>
