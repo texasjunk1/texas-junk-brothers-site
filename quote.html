@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Get Quote | LoneStar Graphics & Print</title>
+  <meta name="description" content="Multi-step quote funnel for custom apparel orders in Texas. Upload your design and get a free mockup before payment." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav-row">
+    <a href="index.html" class="brand">LGP <span>Get Quote</span></a>
+    <a class="btn btn-primary" href="#quote-funnel">Get a Quote</a>
+  </div>
+</header>
+<main>
+<section class="hero" id="quote-funnel">
+  <div class="container">
+    <p class="kicker">Free Quote Funnel</p>
+    <h1>Get Your Free Custom Apparel Quote</h1>
+    <p>Pick your items, upload your design, and we’ll send you a mockup before you pay.</p>
+    <p class="muted" id="progress-label">Step 1 of 5 (20%)</p>
+    <div class="progress-wrap"><div class="progress-bar" id="progress-bar"></div></div>
+  </div>
+</section>
+
+<section>
+  <div class="container card">
+    <form id="funnelForm" class="form">
+      <div class="quote-step active" data-step="1">
+        <h2>Step 1 — Choose Your Deal</h2>
+        <div class="inline">
+          <button type="button" class="btn btn-secondary" data-tab="bundle">📦 Bundle Deals (Best Value)</button>
+          <button type="button" class="btn btn-ghost" data-tab="individual">👕 Individual Products</button>
+        </div>
+
+        <div id="bundleOptions" class="grid grid-2" style="margin-top:12px;">
+          <article class="choice-card"><h3>T-Shirts Deal (Most Popular)</h3><p class="muted">Core team pack with mixed sizes.</p><button type="button" class="btn btn-primary select-choice">Select</button></article>
+          <article class="choice-card"><h3>Hoodies Deal (Best Value)</h3><p class="muted">Premium warmth and high perceived value.</p><button type="button" class="btn btn-primary select-choice">Select</button></article>
+          <article class="choice-card"><h3>Polos Deal (Business Use)</h3><p class="muted">Clean uniform-ready option for crews.</p><button type="button" class="btn btn-primary select-choice">Select</button></article>
+          <article class="choice-card"><h3>Hats Deal</h3><p class="muted">Add-on package for field teams and merch.</p><button type="button" class="btn btn-primary select-choice">Select</button></article>
+        </div>
+
+        <div id="individualOptions" class="grid" style="display:none; margin-top:12px;">
+          <label>T-Shirt Quantity <input type="number" min="0" value="0" /></label>
+          <label>Hoodie Quantity <input type="number" min="0" value="0" /></label>
+          <label>Polo Quantity <input type="number" min="0" value="0" /></label>
+          <label>Hat Quantity <input type="number" min="0" value="0" /></label>
+          <label>Jacket Quantity <input type="number" min="0" value="0" /></label>
+          <label>Safety Vest Quantity <input type="number" min="0" value="0" /></label>
+          <label>Beanie Quantity <input type="number" min="0" value="0" /></label>
+          <label>Tote Bag Quantity <input type="number" min="0" value="0" /></label>
+          <button type="button" class="btn btn-ghost">+ Add another item</button>
+        </div>
+        <p class="muted">Minimum order is 5 pieces — we’ll help you get there.</p>
+        <button type="button" class="btn btn-primary next-btn">Continue</button>
+      </div>
+
+      <div class="quote-step" data-step="2">
+        <h2>Step 2 — Contact Info</h2>
+        <label>Full Name <input type="text" required /></label>
+        <label>Email <input type="email" required /></label>
+        <label>Phone <input type="tel" required /></label>
+        <label class="inline"><input type="checkbox" /> I agree to receive SMS updates about my quote</label>
+        <p class="notice">We respond within 24 hours.</p>
+        <button type="button" class="btn btn-primary next-btn">Continue</button>
+      </div>
+
+      <div class="quote-step" data-step="3">
+        <h2>Step 3 — Colors</h2>
+        <p>Choose one or more colors.</p>
+        <div class="select-grid">
+          <label class="choice-card"><input type="checkbox" /> Black</label>
+          <label class="choice-card"><input type="checkbox" /> White</label>
+          <label class="choice-card"><input type="checkbox" /> Grey</label>
+          <label class="choice-card"><input type="checkbox" /> Navy</label>
+          <label class="choice-card"><input type="checkbox" /> Red</label>
+          <label class="choice-card"><input type="checkbox" /> Safety Green</label>
+        </div>
+        <button type="button" class="btn btn-primary next-btn">Continue</button>
+      </div>
+
+      <div class="quote-step" data-step="4">
+        <h2>Step 4 — Design</h2>
+        <p>Do you have a logo?</p>
+        <div class="inline">
+          <label><input type="radio" name="hasLogo" value="yes" checked /> Yes, I have one</label>
+          <label><input type="radio" name="hasLogo" value="no" /> No, I need one</label>
+        </div>
+
+        <div id="yesLogo" class="grid">
+          <label>Upload Logo <input type="file" /></label>
+          <label>Optional Notes <textarea placeholder="Add any placement details or instructions"></textarea></label>
+        </div>
+
+        <div id="noLogo" class="grid" style="display:none;">
+          <label>Company Name <input type="text" /></label>
+          <label>Design Description (optional) <textarea></textarea></label>
+        </div>
+
+        <p><strong>We’ll send you a free mockup before you pay.</strong></p>
+        <button type="button" class="btn btn-primary next-btn">Continue</button>
+      </div>
+
+      <div class="quote-step" data-step="5">
+        <h2>Step 5 — Sizes</h2>
+        <label class="inline"><input type="checkbox" id="noSizesYet" /> I don’t have sizes yet</label>
+        <div id="sizeFields" class="size-grid">
+          <label>S <input type="number" min="0" value="0" /></label>
+          <label>M <input type="number" min="0" value="0" /></label>
+          <label>L <input type="number" min="0" value="0" /></label>
+          <label>XL <input type="number" min="0" value="0" /></label>
+          <label>2XL (+$3) <input type="number" min="0" value="0" /></label>
+          <label>3XL (+$3) <input type="number" min="0" value="0" /></label>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit Quote Request</button>
+      </div>
+    </form>
+
+    <div id="confirmation" class="quote-step" data-step="6">
+      <h2>Your Mockups Are Being Created</h2>
+      <p>We’ll text you within 24 hours with your design preview.</p>
+      <ul>
+        <li>No payment required yet</li>
+        <li>Review and request changes</li>
+        <li>Approve when ready</li>
+      </ul>
+      <p><strong>Faster replies = faster production.</strong></p>
+      <div class="cta-row">
+        <a class="btn btn-secondary" href="sms:+12108994721">Text Us Now</a>
+        <a class="btn btn-ghost" href="index.html">Back Home</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="band"><div class="container"><p>Fast turnaround: 2–4 days after approval · Most orders range from $100–$800 depending on quantity · Built for businesses, events, and brands</p></div></section>
+<section>
+  <div class="container notice">
+    <strong>Backend integration checklist:</strong> send submissions to email + SMS, trigger immediate text alerts, and store every lead in your CRM or spreadsheet.
+  </div>
+</section>
+</main>
+<footer class="footer"><div class="container"><strong>LoneStar Graphics & Print</strong> · <a href="tel:+12108994721">(210) 899-4721</a> · <a href="sms:+12108994721">Text Us</a></div></footer>
+<script src="quote.js"></script>
+</body>
+</html>
